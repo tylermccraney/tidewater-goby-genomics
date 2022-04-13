@@ -135,10 +135,37 @@ USE_JDK_INFLATER=true \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_sortsam.txt
 ```
 
-``` bash
-```
+#### Call variants
 
 ``` bash
+gatk \
+--java-options "-Djava.io.tmpdir=/dev/shm/tmp -Djava.library.path=/home/instr1/miniconda3/envs/gatk/lib -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=1" \
+HaplotypeCaller \
+--input $HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_sortsam.bam \
+--output $HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_haplotypecaller.g.vcf.gz \
+--reference $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
+--pair-hmm-implementation VSX_LOGLESS_CACHING \
+--native-pair-hmm-threads 8 \
+--emit-ref-confidence GVCF \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_haplotypecaller.g.vcf.txt
+```
+
+#### Revise block compression format to decrease gVCF size
+
+``` bash
+$HOME/apps/gatk/gatk \
+--java-options "-Xmx3G -XX:+UseParallelGC -XX:ParallelGCThreads=1" \
+ReblockGVCF \
+--variant $HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_haplotypecaller.g.vcf.gz \
+--output $HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_reblock.g.vcf.gz \
+--reference $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
+--keep-all-alts \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_reblock.g.vcf.txt
 ```
 
 ``` bash
