@@ -206,6 +206,99 @@ CombineGVCFs \
 ```
 
 ``` bash
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+GenotypeGVCFs \
+--variant $HOME/twg/variants/2014BurroParedon_combine.g.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_genotypeg.vcf.gz \
+--reference $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_genotypeg.vcf.txt
+
+# SNPs
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+SelectVariants \
+--variant $HOME/twg/variants/2014BurroParedon_genotypeg.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_snps_selectvariants.vcf.gz \
+--select-type-to-include SNP \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_snps_selectvariants.txt
+
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+VariantFiltration \
+--variant $HOME/twg/variants/2014BurroParedon_snps_selectvariants.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_snps_variantfiltration.vcf.gz \
+--filter-name 'QD2' --filter-expression 'QD < 2.0' \
+--filter-name 'QUAL30' --filter-expression 'QUAL < 30.0' \
+--filter-name 'SOR3' --filter-expression 'SOR > 3.0' \
+--filter-name 'FS60' --filter-expression 'FS > 60.0' \
+--filter-name 'MQ40' --filter-expression 'MQ < 40.0' \
+--filter-name 'MQRankSum-12.5' --filter-expression 'MQRankSum < -12.5' \
+--filter-name 'ReadPosRankSum-8' --filter-expression 'ReadPosRankSum < -8.0' \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_snps_variantfiltration.txt
+
+# INDELs
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+SelectVariants \
+--variant $HOME/twg/variants/2014BurroParedon_genotypeg.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_indels_selectvariants.vcf.gz \
+--select-type-to-include INDEL \
+--select-type-to-include MIXED \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_indels_selectvariants.txt
+
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+VariantFiltration \
+--variant $HOME/twg/variants/2014BurroParedon_indels_selectvariants.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_indels_variantfiltration.vcf.gz \
+--filter-name 'QD2' --filter-expression 'QD < 2.0' \
+--filter-name 'QUAL30' --filter-expression 'QUAL < 30.0' \
+--filter-name 'FS200' --filter-expression 'FS > 200.0' \
+--filter-name 'ReadPosRankSum-20' --filter-expression 'ReadPosRankSum < -20.0' \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_indels_variantfiltration.txt
+
+# Merge and filter SVs
+java \
+-Xmx4G \
+-XX:+UseParallelGC \
+-XX:ParallelGCThreads=2 \
+-jar $HOME/apps/picard/build/libs/picard.jar \
+SortVcf \
+I=$HOME/twg/variants/2014BurroParedon_snps_variantfiltration.vcf.gz \
+I=$HOME/twg/variants/2014BurroParedon_indels_variantfiltration.vcf.gz \
+O=$HOME/twg/variants/2014BurroParedon_sort.vcf.gz \
+COMPRESSION_LEVEL=2 \
+TMP_DIR=/dev/shm/tmp \
+USE_JDK_DEFLATER=true \
+USE_JDK_INFLATER=true \
+2> $HOME/twg/variants/logs/2014BurroParedon_sort.vcf.txt
+
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+SelectVariants \
+--variant $HOME/twg/variants/2014BurroParedon_sort.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_selectvariants.vcf.gz \
+--exclude-filtered \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_selectvariants.txt
 ```
 
 ``` bash
