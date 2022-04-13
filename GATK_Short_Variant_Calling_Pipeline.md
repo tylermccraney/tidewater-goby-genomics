@@ -168,7 +168,7 @@ ReblockGVCF \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_reblock.g.vcf.txt
 ```
 
-#### Combine individual gVCF files
+#### Combine individual gVCF files with a ‘snowball’ strategy
 
 ``` bash
 mkdir $HOME/twg/variants
@@ -190,6 +190,19 @@ CombineGVCFs \
 --use-jdk-deflater \
 --use-jdk-inflater \
 2> $HOME/twg/variants/logs/2014Burro_combine.g.vcf.txt
+
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx6G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+CombineGVCFs \
+--variant $HOME/twg/variants/2014Burro_combine.g.vcf.gz \
+--variant $HOME/twg/variants/2014Paredon_combine.g.vcf.gz \
+--output $HOME/twg/variants/2014BurroParedon_combine.g.vcf.gz \
+--reference $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
+--seconds-between-progress-updates 60 \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014BurroParedon_combine.g.vcf.txt
 ```
 
 ``` bash
