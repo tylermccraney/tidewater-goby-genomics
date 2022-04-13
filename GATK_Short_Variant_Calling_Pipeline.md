@@ -28,12 +28,12 @@ USE_JDK_INFLATER=true \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_HJLYTDSX2_L4_fastqtosam.txt
 ```
 
-#### QC and map/align to reference genome
+#### QC then map/align to reference genome
 
 ###### *MarkIlluminaAdapters \| SamToFastq \| BWA-MEM \| MergeBamAlignment*
 
 ``` bash
-mkdir /home/instr1/twg/assemblies/mapped/2014Burro04/metrics
+mkdir $HOME/twg/assemblies/mapped/2014Burro04/metrics
 
 set -o pipefail
 
@@ -95,7 +95,44 @@ USE_JDK_INFLATER=true \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_HJLYTDSX2_L4_mergebamalignment.txt
 ```
 
+#### More QC
+
+##### *MarkDuplicates \| SortSam*
+
 ``` bash
+set -o pipefail
+
+java \
+-Xmx2G \
+-XX:+UseParallelGC \
+-XX:ParallelGCThreads=2 \
+-jar $HOME/apps/picard/build/libs/picard.jar \
+MarkDuplicates \
+I=$HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_HJLYTDSX2_L4_mergebamalignment.bam \
+O=/dev/stdout \
+M=$HOME/twg/assemblies/mapped/2014Burro04/metrics/2014Burro04_markduplicates.txt \
+MAX_FILE_HANDLES=1000 \
+OPTICAL_DUPLICATE_PIXEL_DISTANCE=2500 \
+COMPRESSION_LEVEL=0 \
+QUIET=true \
+TMP_DIR=/dev/shm/tmp \
+USE_JDK_DEFLATER=true \
+USE_JDK_INFLATER=true \
+2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_markduplicates.txt | 
+java \
+-Xmx10G \
+-XX:+UseParallelGC \
+-XX:ParallelGCThreads=2 \
+-jar $HOME/apps/picard/build/libs/picard.jar \
+SortSam \
+I=/dev/stdin \
+O=$HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_sortsam.bam \
+SO=coordinate \
+CREATE_INDEX=true \
+TMP_DIR=/dev/shm/tmp \
+USE_JDK_DEFLATER=true \
+USE_JDK_INFLATER=true \
+2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_sortsam.txt
 ```
 
 ``` bash
