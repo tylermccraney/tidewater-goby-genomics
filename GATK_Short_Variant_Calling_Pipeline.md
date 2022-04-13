@@ -3,7 +3,7 @@ GATK Short Variant Calling Pipeline
 Tyler McCraney
 2022-04-13
 
-#### Convert raw FASTQ to BAM
+#### Convert raw FASTQ to unmapped BAM
 
 ``` bash
 mkdir $HOME/twg/assemblies
@@ -28,7 +28,9 @@ USE_JDK_INFLATER=true \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_HJLYTDSX2_L4_fastqtosam.txt
 ```
 
-#### MarkIlluminaAdapters–\>SamToFastq–\>BWA-MEM–\>MergeBamAlignment
+#### QC and map/align to reference genome
+
+###### *MarkIlluminaAdapters \| SamToFastq \| BWA-MEM \| MergeBamAlignment*
 
 ``` bash
 mkdir /home/instr1/twg/assemblies/mapped/2014Burro04/metrics
@@ -64,8 +66,7 @@ TMP_DIR=/dev/shm/tmp \
 USE_JDK_DEFLATER=true \
 USE_JDK_INFLATER=true \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_HJLYTDSX2_L4_samtofastq.txt |
-$HOME/miniconda3/envs/gatk/bin/bwa \
-mem \
+$HOME/miniconda3/envs/gatk/bin/bwa mem \
 -M \
 -t 8 \
 -p \
