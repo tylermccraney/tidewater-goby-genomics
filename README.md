@@ -8,3 +8,4 @@ Professor and Chair
 
 Department of Fisheries Biology  
 Cal Poly Humboldt  
+Arcata, CA
