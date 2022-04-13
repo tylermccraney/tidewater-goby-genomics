@@ -8,29 +8,25 @@ Tyler McCraney
 ``` bash
 gunzip $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta.gz
 
-bwa \
-index \
+bwa index \
 -a bwtsw \
 $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
 2> $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.log
 
 java \
 -Xmx10G \
--jar \
-$HOME/miniconda3/envs/picard/share/picard-2.21.2-0/picard.jar \
+-jar $HOME/miniconda3/envs/picard/share/picard-2.21.2-0/picard.jar \
 CreateSequenceDictionary \
 R=$HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
 O=$HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta.dict \
 2>> $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.log
 
-samtools \
-faidx \
+samtools faidx \
 $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
 2>> $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.log
 
 # HaplotypeCaller wants "fEucNew1.0.p_ctg.dict" (not "fEucNew1.0.p_ctg.fasta.dict")
-cp \
-$HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta.dict \
+cp $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta.dict \
 $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.dict
 ```
 
