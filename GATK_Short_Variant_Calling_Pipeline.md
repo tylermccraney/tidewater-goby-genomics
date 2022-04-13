@@ -152,7 +152,7 @@ HaplotypeCaller \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_haplotypecaller.g.vcf.txt
 ```
 
-#### Revise block compression format to decrease gVCF size
+#### Revise block compression format to decrease gVCF file size
 
 ``` bash
 $HOME/apps/gatk/gatk \
@@ -168,7 +168,28 @@ ReblockGVCF \
 2> $HOME/twg/assemblies/mapped/2014Burro04/logs/2014Burro04_reblock.g.vcf.txt
 ```
 
+#### Combine individual gVCF files
+
 ``` bash
+mkdir $HOME/twg/variants
+mkdir $HOME/twg/variants/logs
+
+$HOME/apps/gatk/gatk \
+--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx3G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \
+CombineGVCFs \
+--variant $HOME/twg/assemblies/mapped/2014Burro04/2014Burro04_reblock.g.vcf.gz \
+--variant $HOME/twg/assemblies/mapped/2014Burro13/2014Burro13_reblock.g.vcf.gz \
+--variant $HOME/twg/assemblies/mapped/2014Burro15/2014Burro15_reblock.g.vcf.gz \
+--variant $HOME/twg/assemblies/mapped/2014Burro16/2014Burro16_reblock.g.vcf.gz \
+--variant $HOME/twg/assemblies/mapped/2014Burro19/2014Burro19_reblock.g.vcf.gz \
+--variant $HOME/twg/assemblies/mapped/2014Burro20/2014Burro20_reblock.g.vcf.gz \
+--output $HOME/twg/variants/2014Burro_combine.g.vcf.gz \
+--reference $HOME/twg/assemblies/reference/fEucNew1.0/fEucNew1.0.p_ctg.fasta \
+--seconds-between-progress-updates 60 \
+--tmp-dir /dev/shm/tmp \
+--use-jdk-deflater \
+--use-jdk-inflater \
+2> $HOME/twg/variants/logs/2014Burro_combine.g.vcf.txt
 ```
 
 ``` bash
