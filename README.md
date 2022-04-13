@@ -1,4 +1,4 @@
-# Conservation/Ecological Genomics of the Endangered Tidewater Goby
+# Population Genomics of the Endangered Tidewater Goby
   
 Tyler McCraney, PhD  
 Postdoctoral Research Associate  
