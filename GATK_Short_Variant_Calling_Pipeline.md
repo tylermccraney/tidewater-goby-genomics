@@ -97,7 +97,7 @@ USE_JDK_INFLATER=true \
 
 #### More QC
 
-##### *MarkDuplicates \| SortSam*
+###### *MarkDuplicates \| SortSam*
 
 ``` bash
 set -o pipefail
