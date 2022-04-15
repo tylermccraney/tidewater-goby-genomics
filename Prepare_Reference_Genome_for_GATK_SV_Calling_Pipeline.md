@@ -1,7 +1,7 @@
 Prepare Reference Genome for GATK SV Calling Pipeline
 ================
 Tyler McCraney
-Last compiled on April 15, 2022
+Last compiled April 15, 2022
 
 #### The reference genome assembly needs to be indexed and dictionaried before it can be used in GATK SV calling pipeline
 

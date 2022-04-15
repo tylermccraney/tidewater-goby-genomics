@@ -1,7 +1,7 @@
 GATK Short Variant Calling Pipeline
 ================
 Tyler McCraney
-Last compiled on April 15, 2022
+Last compiled April 15, 2022
 
 1.2 TB raw Illumina data (PE150)
 
