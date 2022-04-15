@@ -1,7 +1,9 @@
 GATK Short Variant Calling Pipeline
 ================
 Tyler McCraney
-2022-04-13
+Last compiled on April 15, 2022
+
+1.2 TB raw Illumina data (PE150)
 
 #### Convert raw FASTQ to unmapped BAM
 
