@@ -339,17 +339,6 @@ ggplot(data = sans, mapping = aes(x = microsatellites, y = short_variants, label
 ![](SVs_versus_STRs_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
 
 ``` r
-ggplot(data = sans, mapping = aes(x = microsatellites, y = short_variants, label = Kinziger_et_al_2015))+
-  geom_point() +
-  geom_text_repel() +
-  geom_abline() +
-  xlim(0,0.55) +
-  ylim(0,0.55)
-```
-
-![](SVs_versus_STRs_files/figure-gfm/unnamed-chunk-6-3.png)<!-- -->
-
-``` r
 lm(formula = short_variants ~ microsatellites, data = dat %>% filter(!grepl(pattern = "Arcata", x = FST))) %>% summary()
 ```
 
@@ -388,4 +377,4 @@ ggplot(data = sans, mapping = aes(x = microsatellites, y = short_variants, label
 ![](SVs_versus_STRs_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 It’s pretty amazing how similar these FST estimates are despite the
-enormous difference loci analyzed!
+enormous difference in number of loci analyzed!
