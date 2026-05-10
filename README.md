@@ -1,7 +1,7 @@
 # Population Genomics of the Endangered Tidewater Goby
   
 Tyler McCraney, PhD  
-Postdoctoral Researcher  
+Postdoc  
 
 Andrew Kinziger, PhD  
 Professor and Chair  
