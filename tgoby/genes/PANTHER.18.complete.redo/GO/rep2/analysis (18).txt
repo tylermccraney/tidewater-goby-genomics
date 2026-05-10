@@ -1,0 +1,13 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	iHS_NorteHumboldt_TOP
+Reference List:	iHS_NorteHumboldt_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER Protein Class	iHS_NorteHumboldt_REF - REFLIST (12003)	iHS_NorteHumboldt_TOP (178)	iHS_NorteHumboldt_TOP (expected)	iHS_NorteHumboldt_TOP (over/under)	iHS_NorteHumboldt_TOP (fold Enrichment)	iHS_NorteHumboldt_TOP (raw P-value)	iHS_NorteHumboldt_TOP (FDR)
+carbohydrate phosphatase (PC00066)	9	3	.13	+	22.48	2.52E-04	4.84E-02

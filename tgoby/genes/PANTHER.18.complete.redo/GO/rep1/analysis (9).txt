@@ -1,0 +1,7 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_Mendocino_SantaBarbara
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+defense/immunity protein (PC00090)	141	+	4.39E-06	8.48E-04
+immunoglobulin receptor superfamily (PC00124)	79	+	5.72E-06	5.52E-04

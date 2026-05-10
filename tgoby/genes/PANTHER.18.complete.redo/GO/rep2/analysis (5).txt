@@ -1,0 +1,10 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	nSL_scores_Mendocino
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+tight junction (PC00214)	25	+	1.88E-04	3.61E-02
+microtubule or microtubule-binding cytoskeletal protein (PC00157)	136	+	7.32E-04	7.03E-02
+microtubule binding motor protein (PC00156)	29	+	8.92E-04	5.71E-02
+C2H2 zinc finger transcription factor (PC00248)	384	+	9.43E-04	4.52E-02
+zinc finger transcription factor (PC00244)	462	+	1.16E-03	4.46E-02

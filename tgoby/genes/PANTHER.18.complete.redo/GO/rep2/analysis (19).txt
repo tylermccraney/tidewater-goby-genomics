@@ -1,0 +1,13 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	nSL_SantaBarbara_TOP
+Reference List:	nSL_SantaBarbara_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER GO-Slim Biological Process	nSL_SantaBarbara_REF - REFLIST (12100)	nSL_SantaBarbara_TOP (118)	nSL_SantaBarbara_TOP (expected)	nSL_SantaBarbara_TOP (over/under)	nSL_SantaBarbara_TOP (fold Enrichment)	nSL_SantaBarbara_TOP (raw P-value)	nSL_SantaBarbara_TOP (FDR)
+oligosaccharide biosynthetic process (GO:0009312)	5	3	.05	+	61.53	8.91E-06	1.91E-02

@@ -1,0 +1,7 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	iHS_scores_NorteHumboldt
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+small GTPase (PC00208)	121	-	4.02E-05	7.73E-03
+G-protein (PC00020)	165	-	5.80E-05	5.57E-03

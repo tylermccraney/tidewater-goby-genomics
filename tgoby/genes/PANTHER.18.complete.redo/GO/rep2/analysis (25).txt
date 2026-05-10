@@ -1,0 +1,14 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	Mendocino_TOP10
+Reference List:	Mendocino_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER Protein Class	Mendocino_REF - REFLIST (12383)	Mendocino_TOP10 (66)	Mendocino_TOP10 (expected)	Mendocino_TOP10 (over/under)	Mendocino_TOP10 (fold Enrichment)	Mendocino_TOP10 (raw P-value)	Mendocino_TOP10 (FDR)
+apolipoprotein (PC00052)	15	3	.08	+	37.52	6.29E-05	1.21E-02
+transfer/carrier protein (PC00219)	67	4	.36	+	11.20	4.38E-04	4.23E-02

@@ -1,0 +1,9 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_Mendocino_NorteHumboldt
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+intermediate filament (PC00129)	41	-	3.10E-04	5.99E-02
+metabolite interconversion enzyme (PC00262)	1350	-	6.25E-04	6.03E-02
+immunoglobulin receptor superfamily (PC00124)	79	+	6.45E-04	4.15E-02
+defense/immunity protein (PC00090)	141	+	8.97E-04	4.33E-02

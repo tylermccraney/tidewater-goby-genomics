@@ -1,0 +1,29 @@
+# FASTQ
+(\$[\w/-]+/)(y*)(\w+)(_)(\w+-\w+)(_)(\w+)(_L)(\d)(_)(1)(\.fq\.gz)
+     1     2    3   4     5     6   7   8   9  10 11    12
+                s         l         f       l
+                a         i         l       a
+                m         b         o       n
+                p         r         w       e
+                l         a         c
+                e         r         e
+                          y         l
+                                    l
+# FastqToSam.sh
+java \\\n-Xmx5G \\\n-jar \\\n$HOME/apps/gatk-4.4.0.0-21-g7415882-SNAPSHOT/gatk-package-4.4.0.0-21-g7415882-SNAPSHOT-local.jar \\\nFastqToSam \\\nF1=\1\2\3\4\5\6\7\8\9\10\11\12 \\\nF2=\1\2\3\4\5\6\7\8\9\102\12 \\\nO=$HOME/twg/assemblies/mapped/20\3/20\3\6\7\8\9_fastqtosam.bam \\\nRG=\7.\9 \\\nSM=20\3 \\\nLB=\5 \\\nPU=\7.\9.\5 \\\nPL=illumina \\\nUSE_JDK_DEFLATER=true \\\nUSE_JDK_INFLATER=true \\\n2> $HOME/twg/assemblies/mapped/20\3/logs/20\3\6\7\8\9_fastqtosam.txt \\\n\& \\
+
+# MarkIlluminaAdapters--SamToFastq--bwa-mem--MergeBamAlignment.sh
+(\$HOME/twg/assemblies/mapped/)(\w+/)([\dA-z]+)(_fastqtosam\.bam)
+set -o pipefail\n\njava \\\n-Xmx2G \\\n-XX:ParallelGCThreads=2 \\\n-jar \\\n$HOME/apps/gatk-4.4.0.0-21-g7415882-SNAPSHOT/gatk-package-4.4.0.0-21-g7415882-SNAPSHOT-local.jar \\\nMarkIlluminaAdapters \\\nI=\1\2\3\4 \\\nO=/dev/stdout \\\nM=\1\2metrics/\3_markilluminaadapters.txt \\\nCOMPRESSION_LEVEL=0 \\\nQUIET=true \\\nTMP_DIR=$HOME/twg/tmp \\\nUSE_JDK_DEFLATER=true \\\nUSE_JDK_INFLATER=true \\\n2> \1\2logs/\3_markilluminaadapters.txt |\njava \\\n-Xmx2G \\\n-XX:ParallelGCThreads=2 \\\njar \\\n$HOME/apps/gatk-4.4.0.0-21-g7415882-SNAPSHOT/gatk-package-4.4.0.0-21-g7415882-SNAPSHOT-local.jar \\\nSamToFastq \\\nI=/dev/stdin \\\nF=/dev/stdout \\\nCLIPPING_ATTRIBUTE=XT \\\nCLIPPING_ACTION=2 \\\nINTERLEAVE=true \\\nNON_PF=true \\\nCOMPRESSION_LEVEL=0 \\\nQUIET=true \\\nTMP_DIR=$HOME/twg/tmp \\\nUSE_JDK_DEFLATER=true \\\nUSE_JDK_INFLATER=true \\\n2> \1\2logs/\3_samtofastq.txt |\nbwa \\\nmem \\\n-M \\\n-t 8 \\\n-p \\\n$HOME/twg/assemblies/reference/fEucNew1.0.hap1/GCA_026437365.1_fEucNew1.0.hap1_genomic.fna \\\n/dev/stdin \\\n2> \1\2logs/\3_bwamem.txt |\njava \\\n-Xmx2G \\\n-XX:ParallelGCThreads=2 \\\n-jar \\\n$HOME/apps/gatk-4.4.0.0-21-g7415882-SNAPSHOT/gatk-package-4.4.0.0-21-g7415882-SNAPSHOT-local.jar \\\nMergeBamAlignment \\\nALIGNED=/dev/stdin \\\nUNMAPPED=\1\2\3\4 \\\nO=\1\2\3_mergebamalignment.bam \\\nR=$HOME/twg/assemblies/reference/fEucNew1.0.hap1/GCA_026437365.1_fEucNew1.0.hap1_genomic.fna \\\nCREATE_INDEX=true \\\nADD_MATE_CIGAR=true \\\nCLIP_ADAPTERS=false \\\nCLIP_OVERLAPPING_READS=true \\\nINCLUDE_SECONDARY_ALIGNMENTS=true \\\nMAX_INSERTIONS_OR_DELETIONS=-1 \\\nPRIMARY_ALIGNMENT_STRATEGY=MostDistant \\\nATTRIBUTES_TO_RETAIN=XS \\\nTMP_DIR=$HOME/twg/tmp \\\nUSE_JDK_DEFLATER=true \\\nUSE_JDK_INFLATER=true \\\n2> \1\2logs/\3_mergebamalignment.txt\n
+
+# MarkDuplicates--SortSam.sh
+(\$HOME/twg/assemblies/mapped/)(\w+/)([\dA-z]+)(_mergebamalignment\.bam)
+set -o pipefail\n\njava \\\n-Xmx2G \\\n-XX:+UseParallelGC \\\n-XX:ParallelGCThreads=2 \\\n-jar \\\n$HOME/apps/gatk-4.4.0.0-21-g7415882-SNAPSHOT/gatk-package-4.4.0.0-21-g7415882-SNAPSHOT-local.jar \\\nMarkDuplicates \\\nI=\1\2\3\4 \\\nO=/dev/stdout \\\nM=\1\2metrics/\3_markduplicates.txt \\\nMAX_FILE_HANDLES=1000 \\\nOPTICAL_DUPLICATE_PIXEL_DISTANCE=2500 \\\nCOMPRESSION_LEVEL=0 \\\nQUIET=true \\\nTMP_DIR=$HOME/twg/tmp \\\nUSE_JDK_DEFLATER=true \\\nUSE_JDK_INFLATER=true \\\n2> \1\2logs/\3_markduplicates.txt | \njava \\\n-Xmx10G \\\n-XX:+UseParallelGC \\\n-XX:ParallelGCThreads=2 \\\n-jar \\\n$HOME/apps/gatk-4.4.0.0-21-g7415882-SNAPSHOT/gatk-package-4.4.0.0-21-g7415882-SNAPSHOT-local.jar \\\nSortSam \\\nI=/dev/stdin \\\nO=\1\2\3_sortsam.bam \\\nSO=coordinate \\\nCREATE_INDEX=true \\\nTMP_DIR=$HOME/twg/tmp \\\nUSE_JDK_DEFLATER=true \\\nUSE_JDK_INFLATER=true \\\n2> \1\2logs/\3_sortsam.txt\n
+
+# HaplotypeCaller
+(\$HOME/twg/assemblies/mapped/\w+/)(\w+)(_sortsam\.bam)
+gatk \\\n--java-options "-Xmx6G -XX:+UseParallelGC -XX:ParallelGCThreads=1" \\\nHaplotypeCaller \\\n--input \1\2\3 \\\n--output \1\2_haplotypecaller.g.vcf.gz \\\n--reference $HOME/twg/assemblies/reference/fEucNew1.0.hap1/GCA_026437365.1_fEucNew1.0.hap1_genomic.fna \\\n--pair-hmm-implementation AVX_LOGLESS_CACHING_OMP \\\n--native-pair-hmm-threads 8 \\\n--emit-ref-confidence GVCF \\\n--tmp-dir $HOME/twg/tmp \\\n--use-jdk-deflater \\\n--use-jdk-inflater \\\n2> \1logs/\2_haplotypecaller.g.vcf.txt \\\n\& \\
+
+# ReblockGVCF
+(/home/instr1/twg/assemblies/mapped/\w+/)(\w+)(_reblock\.g\.vcf\.gz)
+/home/instr1/apps/gatk/gatk \\\n--java-options "-Dsamjdk.use_async_io_read_samtools=true -Xmx4G -XX:+UseParallelGC -XX:ParallelGCThreads=2" \\\nReblockGVCF \\\n--variant \1\2_haplotypecaller.g.vcf.gz \\\n--output \1\2\3 \\\n--reference $HOME/twg/assemblies/reference/fEucNew1.0.hap1/GCA_026437365.1_fEucNew1.0.hap1_genomic.fna \\\n--standard-min-confidence-threshold-for-calling 0.0 \\\n--gvcf-gq-bands 10 \\\n--gvcf-gq-bands 20 \\\n--gvcf-gq-bands 30 \\\n--gvcf-gq-bands 40 \\\n--gvcf-gq-bands 50 \\\n--gvcf-gq-bands 60 \\\n--gvcf-gq-bands 70 \\\n--gvcf-gq-bands 80 \\\n--gvcf-gq-bands 90 \\\n--floor-blocks \\\n--keep-all-alts \\\n--tmp-dir $HOME/twg/tmp \\\n--use-jdk-deflater \\\n--use-jdk-inflater \\\n2> \1logs/\2\3 \\\n\& \\

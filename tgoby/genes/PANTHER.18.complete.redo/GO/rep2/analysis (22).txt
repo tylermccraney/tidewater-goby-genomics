@@ -1,0 +1,18 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-CLR_NorteHumboldt_SantaBarbara_TOP
+Reference List:	XP-CLR_NorteHumboldt_SantaBarbara_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER GO-Slim Biological Process	XP-CLR_NorteHumboldt_SantaBarbara_REF - REFLIST (12253)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (116)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (expected)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (over/under)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (fold Enrichment)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (raw P-value)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (FDR)
+nucleoside triphosphate catabolic process (GO:0009143)	8	4	.08	+	52.81	5.18E-07	1.11E-03
+purine-containing compound catabolic process (GO:0072523)	13	4	.12	+	32.50	5.11E-06	5.47E-03
+nucleotide catabolic process (GO:0009166)	15	4	.14	+	28.17	9.60E-06	6.86E-03
+purine nucleoside triphosphate metabolic process (GO:0009144)	17	4	.16	+	24.85	1.65E-05	8.84E-03
+nucleoside phosphate catabolic process (GO:1901292)	18	4	.17	+	23.47	2.11E-05	9.02E-03
+nucleoside triphosphate metabolic process (GO:0009141)	22	4	.21	+	19.21	4.89E-05	1.75E-02

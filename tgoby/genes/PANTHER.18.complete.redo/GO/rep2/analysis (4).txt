@@ -1,0 +1,6 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	nSL_scores_NorteHumboldt
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+ubiquitin-protein ligase (PC00234)	358	-	1.65E-04	3.18E-02

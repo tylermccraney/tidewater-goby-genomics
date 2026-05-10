@@ -1,0 +1,9 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_SantaBarbara_Mendocino
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+C2H2 zinc finger transcription factor (PC00248)	391	+	1.35E-10	2.60E-08
+zinc finger transcription factor (PC00244)	469	+	1.53E-10	1.48E-08
+DNA-binding transcription factor (PC00218)	908	+	2.24E-06	1.44E-04
+gene-specific transcriptional regulator (PC00264)	978	+	4.79E-06	2.31E-04

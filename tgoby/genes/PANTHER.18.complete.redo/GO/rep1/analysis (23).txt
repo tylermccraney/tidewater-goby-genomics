@@ -1,0 +1,14 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-CLR_NorteHumboldt_SantaBarbara_TOP
+Reference List:	XP-CLR_NorteHumboldt_SantaBarbara_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER Protein Class	XP-CLR_NorteHumboldt_SantaBarbara_REF - REFLIST (12253)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (116)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (expected)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (over/under)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (fold Enrichment)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (raw P-value)	XP-CLR_NorteHumboldt_SantaBarbara_TOP (FDR)
+C2H2 zinc finger transcription factor (PC00248)	388	14	3.67	+	3.81	1.73E-05	3.34E-03
+zinc finger transcription factor (PC00244)	466	14	4.41	+	3.17	1.26E-04	1.22E-02

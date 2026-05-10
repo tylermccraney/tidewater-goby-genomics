@@ -1,0 +1,11 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_SantaBarbara_NorteHumboldt
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+C2H2 zinc finger transcription factor (PC00248)	391	+	6.80E-10	1.31E-07
+zinc finger transcription factor (PC00244)	469	+	8.92E-10	8.61E-08
+gene-specific transcriptional regulator (PC00264)	978	+	5.44E-06	3.50E-04
+DNA-binding transcription factor (PC00218)	908	+	6.77E-06	3.27E-04
+membrane-bound signaling molecule (PC00152)	32	+	4.39E-04	1.69E-02
+scaffold/adaptor protein (PC00226)	566	-	9.23E-04	2.97E-02

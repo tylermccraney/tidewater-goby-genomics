@@ -1,0 +1,13 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	NorteHumboldt_TOP10
+Reference List:	NorteHumboldt_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER Protein Class	NorteHumboldt_REF - REFLIST (12383)	NorteHumboldt_TOP10 (61)	NorteHumboldt_TOP10 (expected)	NorteHumboldt_TOP10 (over/under)	NorteHumboldt_TOP10 (fold Enrichment)	NorteHumboldt_TOP10 (raw P-value)	NorteHumboldt_TOP10 (FDR)
+DNA-directed RNA polymerase (PC00019)	25	3	.12	+	24.36	2.42E-04	4.67E-02

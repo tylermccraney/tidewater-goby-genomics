@@ -1,0 +1,11 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_NorteHumboldt_SantaBarbara
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+small GTPase (PC00208)	125	+	6.60E-05	1.27E-02
+Hsp70 family chaperone (PC00027)	15	-	2.11E-04	2.03E-02
+esterase (PC00097)	25	-	2.73E-04	1.75E-02
+defense/immunity protein (PC00090)	141	+	5.49E-04	2.65E-02
+G-protein (PC00020)	170	+	7.39E-04	2.85E-02
+major histocompatibility complex protein (PC00149)	18	+	1.51E-03	4.85E-02

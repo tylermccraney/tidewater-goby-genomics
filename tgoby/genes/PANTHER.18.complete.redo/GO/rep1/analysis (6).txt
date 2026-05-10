@@ -1,0 +1,6 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	nSL_scores_SantaBarbara
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+reverse transcriptase (PC00200)	7	+	1.33E-04	2.56E-02

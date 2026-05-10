@@ -1,0 +1,6 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-CLR_scores_SantaBarbara_Mendocino
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+Rel homology transcription factor (PC00252)	30	+	8.82E-05	1.69E-02

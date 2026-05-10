@@ -1,0 +1,12 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_SantaBarbara_Mendocino
+Correction:	FDR
+PANTHER GO-Slim Biological Process	number	overUnder	pvalue	fdr
+regulation of BMP signaling pathway (GO:0030510)	20	+	4.75E-05	1.02E-01
+negative regulation of BMP signaling pathway (GO:0030514)	15	+	6.48E-05	6.94E-02
+protein acylation (GO:0043543)	54	-	1.06E-04	7.57E-02
+internal protein amino acid acetylation (GO:0006475)	23	-	1.10E-04	5.87E-02
+peptidyl-lysine acetylation (GO:0018394)	23	-	1.10E-04	4.69E-02
+internal peptidyl-lysine acetylation (GO:0018393)	23	-	1.10E-04	3.91E-02
+histone acetylation (GO:0016573)	22	-	1.60E-04	4.89E-02

@@ -1,0 +1,16 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_SantaBarbara_NorteHumboldt_TOP
+Reference List:	XP-nSL_SantaBarbara_NorteHumboldt_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER GO-Slim Biological Process	--XP-nSL_SantaBarbara_NorteHumboldt_REF - REFLIST (12366)	--XP-nSL_SantaBarbara_NorteHumboldt_TOP (75)	--XP-nSL_SantaBarbara_NorteHumboldt_TOP (expected)	--XP-nSL_SantaBarbara_NorteHumboldt_TOP (over/under)	--XP-nSL_SantaBarbara_NorteHumboldt_TOP (fold Enrichment)	--XP-nSL_SantaBarbara_NorteHumboldt_TOP (raw P-value)	--XP-nSL_SantaBarbara_NorteHumboldt_TOP (FDR)
+exocytosis (GO:0006887)	79	6	.45	+	13.42	5.31E-06	1.14E-02
+secretion by cell (GO:0032940)	97	6	.55	+	10.93	1.74E-05	1.87E-02
+secretion (GO:0046903)	99	6	.56	+	10.71	1.96E-05	1.40E-02
+export from cell (GO:0140352)	105	6	.59	+	10.09	2.74E-05	1.47E-02

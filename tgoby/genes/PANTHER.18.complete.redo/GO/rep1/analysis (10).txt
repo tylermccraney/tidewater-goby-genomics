@@ -1,0 +1,7 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-nSL_scores_SantaBarbara_NorteHumboldt
+Correction:	FDR
+PANTHER GO-Slim Biological Process	number	overUnder	pvalue	fdr
+negative regulation of BMP signaling pathway (GO:0030514)	15	+	3.97E-05	8.51E-02
+regulation of BMP signaling pathway (GO:0030510)	20	+	4.38E-05	4.69E-02

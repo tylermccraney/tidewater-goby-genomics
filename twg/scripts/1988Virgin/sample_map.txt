@@ -1,0 +1,6 @@
+1988Virgin21	$HOME/twg/assemblies/mapped/1988Virgin21/1988Virgin21_haplotypecaller.g.vcf.gz	$HOME/twg/assemblies/mapped/1988Virgin21/1988Virgin21_haplotypecaller.g.vcf.gz.tbi
+1988Virgin24	$HOME/twg/assemblies/mapped/1988Virgin24/1988Virgin24_haplotypecaller.g.vcf.gz	$HOME/twg/assemblies/mapped/1988Virgin24/1988Virgin24_haplotypecaller.g.vcf.gz.tbi
+1988Virgin26	$HOME/twg/assemblies/mapped/1988Virgin26/1988Virgin26_haplotypecaller.g.vcf.gz	$HOME/twg/assemblies/mapped/1988Virgin26/1988Virgin26_haplotypecaller.g.vcf.gz.tbi
+1988Virgin28	$HOME/twg/assemblies/mapped/1988Virgin28/1988Virgin28_haplotypecaller.g.vcf.gz	$HOME/twg/assemblies/mapped/1988Virgin28/1988Virgin28_haplotypecaller.g.vcf.gz.tbi
+1988Virgin30	$HOME/twg/assemblies/mapped/1988Virgin30/1988Virgin30_haplotypecaller.g.vcf.gz	$HOME/twg/assemblies/mapped/1988Virgin30/1988Virgin30_haplotypecaller.g.vcf.gz.tbi
+1988Virgin31	$HOME/twg/assemblies/mapped/1988Virgin31/1988Virgin31_haplotypecaller.g.vcf.gz	$HOME/twg/assemblies/mapped/1988Virgin31/1988Virgin31_haplotypecaller.g.vcf.gz.tbi

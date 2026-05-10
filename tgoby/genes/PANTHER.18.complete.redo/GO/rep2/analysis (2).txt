@@ -1,0 +1,6 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	iHS_scores_Mendocino
+Correction:	FDR
+PANTHER Protein Class	number	overUnder	pvalue	fdr
+major histocompatibility complex protein (PC00149)	18	+	2.07E-06	3.98E-04

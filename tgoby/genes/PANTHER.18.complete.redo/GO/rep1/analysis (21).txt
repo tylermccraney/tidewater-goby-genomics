@@ -1,0 +1,13 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-CLR_NorteHumboldt_Mendocino_TOP
+Reference List:	XP-CLR_NorteHumboldt_Mendocino_REF
+Test Type:	FISHER
+Correction:	FDR
+PANTHER Protein Class	XP-CLR_NorteHumboldt_Mendocino_REF - REFLIST (12245)	XP-CLR_NorteHumboldt_Mendocino_TOP (118)	XP-CLR_NorteHumboldt_Mendocino_TOP (expected)	XP-CLR_NorteHumboldt_Mendocino_TOP (over/under)	XP-CLR_NorteHumboldt_Mendocino_TOP (fold Enrichment)	XP-CLR_NorteHumboldt_Mendocino_TOP (raw P-value)	XP-CLR_NorteHumboldt_Mendocino_TOP (FDR)
+Hsp70 family chaperone (PC00027)	12	3	.12	+	25.94	1.80E-04	3.46E-02

@@ -1,0 +1,8 @@
+Analysis Type:	PANTHER Enrichment Test (release 20231017)
+Annotation Version and Release Date:	PANTHER version 18.0 Released 2023-08-01
+Analyzed List:	XP-CLR_scores_SantaBarbara_NorteHumboldt
+Correction:	FDR
+PANTHER GO-Slim Biological Process	number	overUnder	pvalue	fdr
+innate immune response (GO:0045087)	25	+	1.94E-07	4.15E-04
+immune response (GO:0006955)	80	+	1.20E-06	1.28E-03
+immune system process (GO:0002376)	156	+	4.26E-05	3.04E-02
